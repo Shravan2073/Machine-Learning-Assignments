@@ -10,3 +10,7 @@ C = df['Payment (Rs)'].values
 
 dimensionality = A.shape[1]  # number of columns/features
 num_vectors   = A.shape[0]  # number of rows/data points
+
+
+
+#read through the instructions again 
