@@ -1,0 +1,14 @@
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+def a2():
+    df = pd.read_excel('LB_2.xlsx', sheet_name='Purchase data')
+    X = df[["Candies (#)", "Mangoes (Kg)", "Milk Packets (#)"]]
+    y = (df["Payment (Rs)"] > 200).astype(int)
+    model = LogisticRegression(max_iter=1000)
+    model.fit(X, y)
+    return model
+
+if __name__ == '__main__':
+    output_a2 = a2()
+    print("A2 Output (Classifier Coef):", output_a2.coef_)
