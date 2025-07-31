@@ -18,7 +18,7 @@ for order in minkowski_orders:
 plt.figure(figsize=(8, 6))
 plt.plot(minkowski_orders, calculated_distances, marker='o', color='purple')
 plt.title('Minkowski Distance vs r (between two vectors)')
-plt.xlabel('r (Order of Minkowski Distance)')
+plt.xlabel('r (Order of Minkowski Distance)') 
 plt.ylabel('Distance')
 plt.grid(True)
 plt.show()

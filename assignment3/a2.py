@@ -16,8 +16,8 @@ print(f"Mean: {calculated_mean}")
 print(f"Variance: {calculated_variance}")
 
 histogram_counts, histogram_bin_edges = np.histogram(data_from_feature, bins=10)
-print(f"Histogram Bins Counts: {histogram_counts}")
-print(f"Histogram Bin Edges: {histogram_bin_edges}")
+print(f"Hist Bins Counts: {histogram_counts}")
+print(f"Hist Bin Edges: {histogram_bin_edges}")
 
 plt.figure(figsize=(8, 6))
 plt.hist(data_from_feature, bins=8, color='skyblue', edgecolor='black')
