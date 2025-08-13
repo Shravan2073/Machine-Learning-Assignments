@@ -10,7 +10,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 CSV_PATH = "DCT_mal.csv"
 TARGET_COL = None
-TEST_SIZE = 0.2
+TEST_SIZE = 0.3
 RANDOM_STATE = 42
 
 def load_all_numeric_features(path, target_col=None):

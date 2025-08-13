@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 CSV_PATH = "DCT_mal.csv"
 TARGET_COL = None
 RANDOM_STATE = 42
-TEST_SIZE = 0.2
+TEST_SIZE = 0.3
 
 def load_one_feature(path, target_col=None):
     df = pd.read_csv(path).dropna().reset_index(drop=True)

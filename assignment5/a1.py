@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 CSV_PATH = "DCT_mal.csv"
 TARGET_COL = None  # None -> auto-detect (prefers 'target'/'class' or last column)
 RANDOM_STATE = 42
-TEST_SIZE = 0.2
+TEST_SIZE = 0.3
 
 def load_and_prepare(path, target_col=None):
     df = pd.read_csv(path)
@@ -51,11 +51,11 @@ def main():
     y_train_pred = reg.predict(X_train)
     y_test_pred = reg.predict(X_test)
 
-    # print short summary
+    
     print(f"Used feature: {feat}, target: {target}")
     print("Model coefficients:", reg.coef_)
     print("Model intercept:", reg.intercept_)
-    # leave metrics to A2 script
+    
 
 if __name__ == "__main__":
     main()
