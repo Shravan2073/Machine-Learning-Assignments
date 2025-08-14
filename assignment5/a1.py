@@ -18,7 +18,6 @@ TEST_SIZE = 0.3
 
 def load_and_prepare(path, target_col=None):
     df = pd.read_csv(path)
-    # Drop rows with NaNs for simplicity
     df = df.dropna().reset_index(drop=True)
     if target_col is None:
         for name in ["target", "y", "label", "class"]:
@@ -26,8 +25,8 @@ def load_and_prepare(path, target_col=None):
                 target_col = name
                 break
     if target_col is None:
-        target_col = df.columns[-1]  # fallback: last column
-    # pick a single numeric feature (first numeric column that is not target)
+        target_col = df.columns[-1] 
+    
     numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
     if target_col in numeric_cols:
         numeric_cols.remove(target_col)
