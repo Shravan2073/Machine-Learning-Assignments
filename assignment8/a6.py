@@ -1,10 +1,11 @@
-import pandas as pd
 import numpy as np
 
-def sigmoid(x): return 1 / (1 + np.exp(-x))
+def sigmoid(x):
+    x = np.clip(x, -500, 500)  # avoid overflow
+    return 1 / (1 + np.exp(-x))
 
-def perceptron_train(X, y, lr=0.05, epochs=500):
-    w = np.zeros(X.shape[1] + 1)
+def perceptron_train(X, y, lr=0.05, epochs=1000):
+    w = np.random.randn(X.shape[1] + 1) * 0.01  # small random init
     for _ in range(epochs):
         for xi, target in zip(X, y):
             xi_aug = np.insert(xi, 0, 1)
@@ -15,10 +16,20 @@ def perceptron_train(X, y, lr=0.05, epochs=500):
     return w
 
 def main():
-    df = pd.read_csv("DCT_mal.csv")  # project dataset
-    # Example: use first 3 features and binary target column (adjust as per your dataset)
-    X = df.iloc[:, :-1].values
-    y = df.iloc[:, -1].apply(lambda v: 1 if v in [1, "Yes", "High"] else 0).values
+    # Customer dataset from Lab-8 PDF
+    X = np.array([
+        [20,6,2,386],
+        [16,3,6,289],
+        [27,6,2,393],
+        [19,1,2,110],
+        [24,4,2,280],
+        [22,1,5,167],
+        [15,4,2,271],
+        [18,4,2,274],
+        [21,1,4,148],
+        [16,2,4,198]
+    ])
+    y = np.array([1,1,1,0,1,0,1,1,0,0])  # Yes=1, No=0
 
     w = perceptron_train(X, y)
     print("Final Weights:", w)

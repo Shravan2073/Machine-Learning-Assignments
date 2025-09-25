@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-dataframe = pd.read_csv("DCT_mal.csv", header=None)
+dataframe = pd.read_csv("DCT_mal.csv")
 
 feature_vectors = dataframe.iloc[:, :-1].values
 class_labels = dataframe.iloc[:, -1].values
@@ -18,7 +18,7 @@ training_features, testing_features, training_labels, testing_labels = train_tes
     filtered_features, filtered_labels, test_size=0.3, random_state=42
 )
 
-knn_model = KNeighborsClassifier(n_neighbors=3)
+knn_model = KNeighborsClassifier(n_neighbors=100)
 knn_model.fit(training_features, training_labels)
 
 test_accuracy_score = knn_model.score(testing_features, testing_labels)

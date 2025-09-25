@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 dataset_path = "DCT_mal.csv"
-dataframe = pd.read_csv(dataset_path, header=None)
+dataframe = pd.read_csv(dataset_path)
 
 selected_feature_column = 0
 data_from_feature = dataframe.iloc[:, selected_feature_column].values
@@ -20,7 +20,7 @@ print(f"Hist Bins Counts: {histogram_counts}")
 print(f"Hist Bin Edges: {histogram_bin_edges}")
 
 plt.figure(figsize=(8, 6))
-plt.hist(data_from_feature, bins=8, color='skyblue', edgecolor='black')
+plt.hist(data_from_feature, bins=10, color='skyblue', edgecolor='green')
 plt.title(f'Histogram of Feature: Column {selected_feature_column}')
 plt.xlabel('Feature Value Ranges')
 plt.ylabel('Frequency Count')

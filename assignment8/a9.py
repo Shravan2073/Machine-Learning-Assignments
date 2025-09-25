@@ -1,5 +1,5 @@
 import numpy as np
-from A8 import train_backprop  # reuse function
+from a8 import train_backprop  
 
 def main():
     X = np.array([[0,0],[0,1],[1,0],[1,1]])

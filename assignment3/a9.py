@@ -30,7 +30,7 @@ training_accuracy_score = accuracy_score(training_labels, training_predictions)
 testing_accuracy_score = accuracy_score(testing_labels, testing_predictions)
 
 print(f"Training Accuracy: {training_accuracy_score*100:.2f}%")
-print(f"Test Accuracy: {testing_accuracy_score*100:.2f}%")
+print(f"Test Accuracy: {testing_accuracy_score*100:.2f}%")  
 
 training_confusion_matrix = confusion_matrix(training_labels, training_predictions, labels=chosen_classes)
 print("\nConfusion Matrix - Training Data:")

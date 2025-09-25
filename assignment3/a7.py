@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-dataframe = pd.read_csv("DCT_mal.csv", header=None)
+dataframe = pd.read_csv("DCT_mal.csv")
 
 feature_vectors = dataframe.iloc[:, :-1].values
 class_labels = dataframe.iloc[:, -1].values
@@ -31,5 +31,5 @@ sample_test_vector = testing_features[0].reshape(1, -1)
 prediction_for_sample = knn_model.predict(sample_test_vector)
 print(f"Predicted Class for a Single Test Vector: {prediction_for_sample[0]}")
 
-print(f"Test Set Accuracy (k=3): {model_accuracy:.2f}")
+print(f"Test Set Accuracy (k=3): {model_accuracy:.5f}")
 print("Model trained successfully with k=3.")

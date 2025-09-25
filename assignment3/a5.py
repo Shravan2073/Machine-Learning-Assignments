@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-dataframe = pd.read_csv("DCT_mal.csv", header=None)
+dataframe = pd.read_csv("DCT_mal.csv")
 
 feature_vectors = dataframe.iloc[:, :-1].values
 class_labels = dataframe.iloc[:, -1].values

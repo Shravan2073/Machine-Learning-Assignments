@@ -8,7 +8,6 @@ feature_vectors = dataframe.iloc[:, :-1].values
 class_labels = dataframe.iloc[:, -1].values
 
 distinct_classes = np.unique(class_labels)
-
 first_class = distinct_classes[0]
 second_class = distinct_classes[1]
 
