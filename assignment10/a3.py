@@ -6,9 +6,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-def pca_classification_99(filepath):
+def pca_classification_95(filepath):
     """
-    Performs PCA retaining 99% variance and runs a classification model.
+    Performs PCA retaining 95% variance and runs a classification model.
 
     Args:
         filepath (str): The path to the CSV file.
@@ -22,7 +22,7 @@ def pca_classification_99(filepath):
     X_scaled = scaler.fit_transform(X)
 
     # Apply PCA
-    pca = PCA(n_components=0.99)
+    pca = PCA(n_components=0.95)
     X_pca = pca.fit_transform(X_scaled)
 
     # Split the data
@@ -39,7 +39,7 @@ def pca_classification_99(filepath):
     accuracy = accuracy_score(y_test, y_pred)
 
     print(f"Number of components selected: {pca.n_components_}")
-    print(f"Accuracy with 99% variance: {accuracy:.4f}")
+    print(f"Accuracy with 95% variance: {accuracy:.4f}")
 
-# Run the function for A2
-pca_classification_99('DCT_mal.csv')
+# Run the function for A3
+pca_classification_95('DCT_mal.csv')
